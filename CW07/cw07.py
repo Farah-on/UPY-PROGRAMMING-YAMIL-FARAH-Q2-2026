@@ -20,8 +20,9 @@ for i in range(len(rol_invertido)):
 resto = suma % 11
 
 #Restar el resultado a 11
-dv = 11 - modulo
+dv = 11 - resto
 
 #Mostrar el dígito verificador
 print("Dígito verificador:", dv)
 print("ROL completo:", rol + "-" + str(dv))
+
