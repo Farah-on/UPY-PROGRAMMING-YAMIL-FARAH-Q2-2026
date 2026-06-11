@@ -18,3 +18,6 @@ for i in range(len(rol_invertido)):
     
 # Calcular el modulo 11
 resto = suma % 11
+
+#Restar el resultado a 11
+dv = 11 - modulo
