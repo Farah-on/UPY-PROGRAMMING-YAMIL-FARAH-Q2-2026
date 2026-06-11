@@ -15,3 +15,6 @@ for i in range(len(rol_invertido)):
     digito = int(rol_invertido[i])
     multiplicador = multiplicadores[i % len(multiplicadores)]
     suma += digito * multiplicador
+    
+# Calcular el modulo 11
+resto = suma % 11
