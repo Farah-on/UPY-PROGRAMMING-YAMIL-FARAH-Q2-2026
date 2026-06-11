@@ -21,3 +21,7 @@ resto = suma % 11
 
 #Restar el resultado a 11
 dv = 11 - modulo
+
+#Mostrar el dígito verificador
+print("Dígito verificador:", dv)
+print("ROL completo:", rol + "-" + str(dv))
