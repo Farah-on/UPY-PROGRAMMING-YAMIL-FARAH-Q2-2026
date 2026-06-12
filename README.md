@@ -1,41 +1,51 @@
 # UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026
 
-## Git/GitHub Repository
+## Numerical Integration Repository
 
-This repository contains Python-based implementations developed as part of Unit 2 for the Programming course (Q2-2026). The objective of this assignment is to calculate the verification digit (DV) of a UTFSM role using the Modulo 11 algorithm.
+This repository contains Python-based implementations developed as part of Unit 2 for the Programming course (Q2-2026). The objective of this assignment is to calculate the numerical integration of a function using four different methods: Left Rectangle Method (LRM), Right Rectangle Method (RRM), Midpoint Rectangle Method (MRM), and the Trapezoidal Rule (TRAP).
 
 ## Project Description
 
-The included Python script (`cw07.py`) calculates the verification digit of a UTFSM role by following a sequence of mathematical operations.
+The included Python script (`cw08.py`) calculates the numerical integration of a user-defined function over a given interval using Riemann sums and the trapezoidal rule.
 
 The program performs the following steps:
 
-* Receives a role number without its verification digit.
-* Reverses the number.
-* Multiplies each digit by the repeating sequence 2, 3, 4, 5, 6, and 7.
-* Adds all multiplication results.
-* Calculates the modulo 11 of the obtained sum.
-* Subtracts the result from 11 to obtain the verification digit.
-* Displays the complete role with its verification digit.
+* Receives the left and right endpoints of the interval (supports expressions with `pi`).
+* Receives the function to integrate as a string expression.
+* Receives the integration method (LRM, RRM, MRM, or TRAP).
+* Divides the interval into 1000 subintervals.
+* Calculates the width `h` of each subinterval.
+* Applies the selected method to approximate the area under the curve.
+* Displays the result of the integration.
 
-### Example
+## Project Files
 
-Input:
+| File | Description |
+|------|-------------|
+| `cw08.py` | Main Python script with the integration logic |
+| `cw08.txt` | PSeInt pseudocode of the algorithm |
+| `cw08.png` | Flowchart diagram of the program |
 
-```
-201012341
-```
+## Pseudocode (cw08.txt)
 
-Output:
+The pseudocode written in PSeInt describes the full logic of the program, including:
 
-```
-Verification Digit: 3
-Complete Role: 201012341-3
-```
+* Input parsing with `pi` support
+* Variable initialization
+* Conditional method selection (LRM, RRM, MRM, TRAP)
+* Loop structure for area accumulation
+* Output display
+
+## Flowchart Diagram (cw08.png)
+
+The diagram visually represents the flow of the program from input to output, including all conditional branches for each integration method.
+
+![Flowchart](cw08.png)
 
 ## Environment & Tools
 
 * Language: Python 3.x
+* Pseudocode Tool: PSeInt
 * Version Control: Git
 * Hosting Platform: GitHub
 
@@ -48,12 +58,13 @@ Complete Role: 201012341-3
 git clone https://github.com/Farah-on/UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026.git
 ```
 
-3. Navigate to the project directory and execute the script:
+3. Navigate to the CW08 directory and execute the script:
 
 ```bash
-python cw07.py
+cd CW08
+python cw08.py
 ```
 
 ## AI Use Declaration
 
-ChatGPT was used as a learning and support tool to understand Git/GitHub commands and to review the implementation of the verification digit algorithm. All code was reviewed, tested, and submitted by the student.
+Claude (Anthropic) was used as a learning and support tool to understand numerical integration methods, debug the Python implementation, generate the PSeInt pseudocode, and structure the README. All code was reviewed, tested, and submitted by the student.
