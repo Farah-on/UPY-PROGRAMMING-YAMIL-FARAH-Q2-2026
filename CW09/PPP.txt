@@ -1,0 +1,29 @@
+#INPUT
+GET verbo FROM user WITH message "Enter a verb: "
+
+#PROCESS
+
+#List of pronouns
+pronombres ← [yo, tu, el, nosotros, vosotros, ellos]
+
+#Dictionary of verb endings
+terminaciones["ar"] ← [o, as, a, amos, ais, an]
+terminaciones["er"] ← [o, es, e, emos, eis, en]
+terminaciones["ir"] ← [o, es, e, imos, is, en]
+
+#Get the stem and ending of the verb
+raiz  ← verb without the last 2 letters
+final ← last 2 letters of verbo
+
+#Select the corresponding endings list
+lista_de_terminaciones ← terminaciones[final]
+
+#OUTPUT
+FOR index FROM 0 TO 5 DO
+
+    pronombre   ← pronombres[index]
+    terminacion ← lista_de_terminaciones[index]
+
+    DISPLAY pronombre + " " + raiz + terminacion
+
+ENDFOR

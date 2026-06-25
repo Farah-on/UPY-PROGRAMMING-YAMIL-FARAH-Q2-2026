@@ -1,46 +1,46 @@
 # UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026
 
-## Numerical Integration Repository
+## Spanish Verb Conjugator Repository
 
-This repository contains Python-based implementations developed as part of Unit 2 for the Programming course (Q2-2026). The objective of this assignment is to calculate the numerical integration of a function using four different methods: Left Rectangle Method (LRM), Right Rectangle Method (RRM), Midpoint Rectangle Method (MRM), and the Trapezoidal Rule (TRAP).
+This repository contains a Python-based implementation developed as part of Unit 2 for the Programming course (Q2-2026). The objective of this assignment is to conjugate a regular Spanish verb in the present tense using lists, dictionaries, loops, and string manipulation.
 
 ## Project Description
 
-The included Python script (`cw08.py`) calculates the numerical integration of a user-defined function over a given interval using Riemann sums and the trapezoidal rule.
+The included Python script (`cw09.py`) conjugates a regular Spanish verb entered by the user.
 
 The program performs the following steps:
 
-* Receives the left and right endpoints of the interval (supports expressions with `pi`).
-* Receives the function to integrate as a string expression.
-* Receives the integration method (LRM, RRM, MRM, or TRAP).
-* Divides the interval into 1000 subintervals.
-* Calculates the width `h` of each subinterval.
-* Applies the selected method to approximate the area under the curve.
-* Displays the result of the integration.
+* Receives a verb in infinitive form.
+* Extracts the stem of the verb (all letters except the last two).
+* Extracts the ending of the verb (`ar`, `er`, or `ir`).
+* Looks up the corresponding list of endings in a dictionary.
+* Combines each pronoun with the stem and its matching ending.
+* Displays the six conjugated forms.
 
 ## Project Files
 
 | File | Description |
 |------|-------------|
-| `cw08.py` | Main Python script with the integration logic |
-| `cw08.txt` | PSeInt pseudocode of the algorithm |
-| `cw08.png` | Flowchart diagram of the program |
+| `cw09.py` | Main Python script with the verb conjugation logic |
+| `cw09.txt` | PSeInt pseudocode of the algorithm |
+| `cw09.png` | Flowchart diagram of the program |
 
-## Pseudocode (cw08.txt)
+## Pseudocode (cw09.txt)
 
 The pseudocode written in PSeInt describes the full logic of the program, including:
 
-* Input parsing with `pi` support
-* Variable initialization
-* Conditional method selection (LRM, RRM, MRM, TRAP)
-* Loop structure for area accumulation
+* User input
+* Pronoun list initialization
+* Dictionary of verb endings
+* Stem and ending extraction
+* Loop structure for conjugation generation
 * Output display
 
-## Flowchart Diagram (cw08.png)
+## Flowchart Diagram (cw09.png)
 
-The diagram visually represents the flow of the program from input to output, including all conditional branches for each integration method.
+The diagram visually represents the flow of the program from input to output, including the selection of the proper verb ending and the generation of all conjugated forms.
 
-![Flowchart](cw08.png)
+![Flowchart](cw09.png)
 
 ## Environment & Tools
 
@@ -52,19 +52,20 @@ The diagram visually represents the flow of the program from input to output, in
 ## How to Run the Program
 
 1. Ensure that Python is installed on your system.
+
 2. Clone this repository:
 
 ```bash
 git clone https://github.com/Farah-on/UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026.git
 ```
 
-3. Navigate to the CW08 directory and execute the script:
+3. Navigate to the CW09 directory and execute the script:
 
 ```bash
-cd CW08
-python cw08.py
+cd CW09
+python cw09.py
 ```
 
 ## AI Use Declaration
 
-Claude (Anthropic) was used as a learning and support tool to understand numerical integration methods, debug the Python implementation, generate the PSeInt pseudocode, and structure the README. All code was reviewed, tested, and submitted by the student.
+Claude (Anthropic) was used as a learning and support tool to understand Python lists, dictionaries, loops, string slicing, generate the PSeInt pseudocode, and structure the README. All code was reviewed, tested, and submitted by the student.
