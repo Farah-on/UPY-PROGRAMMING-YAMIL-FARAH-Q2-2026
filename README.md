@@ -1,46 +1,49 @@
 # UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026
 
-## Spanish Verb Conjugator Repository
+## School Management System Repository
 
-This repository contains a Python-based implementation developed as part of Unit 2 for the Programming course (Q2-2026). The objective of this assignment is to conjugate a regular Spanish verb in the present tense using lists, dictionaries, loops, and string manipulation.
+This repository contains a Python-based implementation developed as part of Unit 2 for the Programming course (Q2-2026). The objective of this assignment is to simulate a basic school management system with different user roles, authentication, grade consultation, grade modification, and academic reporting.
 
 ## Project Description
 
-The included Python script (`cw09.py`) conjugates a regular Spanish verb entered by the user.
+The included Python script (`cw10.py`) implements a role-based school management system.
 
 The program performs the following steps:
 
-* Receives a verb in infinitive form.
-* Extracts the stem of the verb (all letters except the last two).
-* Extracts the ending of the verb (`ar`, `er`, or `ir`).
-* Looks up the corresponding list of endings in a dictionary.
-* Combines each pronoun with the stem and its matching ending.
-* Displays the six conjugated forms.
+* Authenticates users with a username and password.
+* Identifies the role of the authenticated user.
+* Allows students to view their report card.
+* Displays approved and pending subjects for students.
+* Allows teachers to view students and subjects.
+* Allows teachers to modify student grades.
+* Allows coordinators to view teachers and a complete grade report.
+* Displays information according to the permissions of each role.
 
 ## Project Files
 
 | File | Description |
 |------|-------------|
-| `cw09.py` | Main Python script with the verb conjugation logic |
-| `cw09.txt` | PSeInt pseudocode of the algorithm |
-| `cw09.png` | Flowchart diagram of the program |
+| `cw10.py` | Main Python script with the school management system logic |
+| `cw10.txt` | PSeInt pseudocode of the algorithm |
+| `Flowchart.png` | Flowchart diagram of the program |
 
-## Pseudocode (cw09.txt)
+## Pseudocode (cw10.txt)
 
 The pseudocode written in PSeInt describes the full logic of the program, including:
 
-* User input
-* Pronoun list initialization
-* Dictionary of verb endings
-* Stem and ending extraction
-* Loop structure for conjugation generation
-* Output display
+* User authentication
+* Role validation
+* Student report card generation
+* Approved and pending subject calculation
+* Teacher grade modification process
+* Coordinator reporting system
+* Conditional structures and loops
 
-## Flowchart Diagram (cw09.png)
+## Flowchart Diagram (Flowchart.png)
 
-The diagram visually represents the flow of the program from input to output, including the selection of the proper verb ending and the generation of all conjugated forms.
+The diagram visually represents the flow of the program from login to role-specific actions, including student, teacher, and coordinator functionalities.
 
-![Flowchart](cw09.png)
+![Flowchart](Flowchart.png)
 
 ## Environment & Tools
 
@@ -59,13 +62,30 @@ The diagram visually represents the flow of the program from input to output, in
 git clone https://github.com/Farah-on/UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026.git
 ```
 
-3. Navigate to the CW09 directory and execute the script:
+3. Navigate to the CW10 directory and execute the script:
 
 ```bash
-cd CW09
-python cw09.py
+cd CW10
+python cw10.py
 ```
+
+## User Roles
+
+### Student
+* View personal report card.
+* View approved subjects.
+* View pending subjects.
+
+### Teacher
+* View students.
+* View subjects.
+* Modify student grades.
+* Review updated grades.
+
+### Coordinator
+* View teacher information.
+* View a complete grade table for all students.
 
 ## AI Use Declaration
 
-Claude (Anthropic) was used as a learning and support tool to understand Python lists, dictionaries, loops, string slicing, generate the PSeInt pseudocode, and structure the README. All code was reviewed, tested, and submitted by the student.
+Claude (Anthropic) was used as a learning and support tool to understand role-based programming, Python dictionaries, loops, conditional structures, generate the PSeInt pseudocode, and structure the README. All code was reviewed, tested, and submitted by the student.
