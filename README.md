@@ -1,6 +1,6 @@
 # UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026
 
-## School Management System Repository
+## Classwork 10- School Management System Repository
 
 This repository contains a Python-based implementation developed as part of Unit 2 for the Programming course (Q2-2026). The objective of this assignment is to simulate a basic school management system with different user roles, authentication, grade consultation, grade modification, and academic reporting.
 
