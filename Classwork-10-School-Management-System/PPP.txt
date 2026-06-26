@@ -1,0 +1,170 @@
+#INPUT
+
+Create users dictionary with:
+- username
+- password
+- role
+- name
+
+Create subjects list:
+subjects ← [Matemáticas, Programación, Inglés]
+
+Create grades dictionary with the grades of each student
+
+#PROCESS
+
+REPEAT
+
+    GET username FROM user WITH message "Usuario: "
+    GET password FROM user WITH message "Contraseña: "
+
+    IF username exists in users AND
+       password is equal to users[username]["password"] THEN
+
+        DISPLAY "Bienvenido " + users[username]["nombre"]
+
+        login_successful ← TRUE
+
+    ELSE
+
+        DISPLAY "Usuario incorrecto o contraseña incorrecta"
+
+        login_successful ← FALSE
+
+    ENDIF
+
+UNTIL login_successful = TRUE
+
+role ← users[username]["rol"]
+
+#STUDENT ROLE
+
+IF role is equal to "alumno" THEN
+
+    approved ← empty set
+
+    DISPLAY "Boleta de " + users[username]["nombre"]
+
+    FOR EACH subject IN subjects DO
+
+        DISPLAY subject
+        DISPLAY grades[username][subject]
+
+        IF grades[username][subject] >= 7 THEN
+
+            ADD subject TO approved
+
+        ENDIF
+
+    ENDFOR
+
+    pending ← subjects minus approved
+
+    DISPLAY "Aprobadas:"
+    DISPLAY approved
+
+    DISPLAY "Pendientes:"
+    DISPLAY pending
+
+#TEACHER ROLE
+
+ELSE IF role is equal to "maestro" THEN
+
+    DISPLAY "Rol: maestro"
+
+    DISPLAY "Alumnos:"
+
+    FOR EACH student IN grades DO
+
+        DISPLAY users[student]["nombre"]
+
+    ENDFOR
+
+    DISPLAY "Materias:"
+
+    FOR EACH subject IN subjects DO
+
+        DISPLAY subject
+
+    ENDFOR
+
+    GET change FROM user WITH message
+    "¿Quieres cambiar la calificación de un alumno? (si/no)"
+
+    WHILE change = "si" DO
+
+        GET student FROM user WITH message "Alumno: "
+
+        GET subject FROM user WITH message "Materia: "
+
+        IF student exists in grades AND
+           subject exists in subjects THEN
+
+            GET new_grade FROM user WITH message
+            "Nueva calificación: "
+
+            GET confirmation FROM user WITH message
+            "¿Estás seguro? (si/no)"
+
+            IF confirmation = "si" THEN
+
+                grades[student][subject] ← new_grade
+
+                DISPLAY "Calificaciones actualizadas de "
+                + users[student]["nombre"]
+
+                FOR EACH subject IN subjects DO
+
+                    DISPLAY subject
+                    DISPLAY grades[student][subject]
+
+                ENDFOR
+
+            ENDIF
+
+        ELSE
+
+            DISPLAY "Alumno no encontrado"
+
+        ENDIF
+
+        GET change FROM user WITH message
+        "¿Quieres cambiar otra calificación? (si/no)"
+
+    ENDWHILE
+
+#COORDINATOR ROLE
+
+ELSE IF role = "coordinador" THEN
+
+    DISPLAY "Maestros:"
+
+    FOR EACH user IN users DO
+
+        IF users[user]["rol"] = "maestro" THEN
+
+            DISPLAY users[user]["nombre"]
+
+        ENDIF
+
+    ENDFOR
+
+    DISPLAY "------------------------------------------------"
+
+    DISPLAY
+    "Alumno | Matemáticas | Programación | Inglés"
+
+    DISPLAY "------------------------------------------------"
+
+    FOR EACH student IN grades DO
+
+        DISPLAY users[student]["nombre"]
+        DISPLAY grades[student]["Matemáticas"]
+        DISPLAY grades[student]["Programación"]
+        DISPLAY grades[student]["Inglés"]
+
+        DISPLAY "------------------------------------------------"
+
+    ENDFOR
+
+ENDIF
