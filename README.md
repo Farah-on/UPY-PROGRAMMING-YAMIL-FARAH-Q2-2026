@@ -1,70 +1,80 @@
 # UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026
 
-## Classwork 13 - Error Handling Repository
+## Classwork 14 - Error Handling Repository
 
-This repository contains the solutions developed for Classwork 13 of the Programming course (Q2-2026). The purpose of this assignment is to demonstrate the use of Python exception handling by improving previous classwork assignments with proper input validation and error management.
+This repository contains the solutions developed for Classwork 14 of the Programming course (Q2-2026). The purpose of this assignment is to improve previous classwork assignments by implementing Python exception handling with `try`, `except`, `else`, and `raise` to validate user input and prevent program crashes.
 
-The repository includes three working Python programs from previous classworks, updated using `try`, `except`, `else`, and `raise` where appropriate.
+The repository includes three working Python programs from previous classworks, updated with proper error handling while preserving their original functionality.
+
+---
 
 ## Project Description
 
 The repository contains the following programs:
 
-### Classwork 07 - Verifier Digit
+### Classwork 10 - School Management System
 
-This program calculates and verifies the check digit of a UTFSM student ID.
+This program simulates a school management system with three different user roles.
 
 Main features:
 
-* Reads the student ID.
-* Validates user input.
-* Calculates the verification digit.
-* Displays the result.
-* Handles invalid inputs using exception handling.
+* User authentication.
+* Student grade consultation.
+* Teacher grade modification.
+* Coordinator grade report.
+* Validation of usernames and passwords.
+* Validation of subjects and students.
+* Validation of grade ranges.
+* Exception handling for invalid input.
 
-### Classwork 08 - Numerical Integration
+---
 
-This program approximates the value of a definite integral using numerical methods.
+### Classwork 11 - The Mandelbrot Set
 
-Supported methods:
+This program generates the iteration data required to create a Mandelbrot Set image.
 
-* Left Rectangle Method (LRM)
-* Right Rectangle Method (RRM)
-* Midpoint Rectangle Method (MRM)
-* Trapezoidal Method (TRAP)
+Main features:
 
-The program validates:
+* Reads configuration values from `config.txt`.
+* Generates Mandelbrot iteration values.
+* Creates a CSV file containing all pixel iterations.
+* Validates configuration parameters.
+* Detects missing configuration values.
+* Handles invalid configuration files.
+* Handles file reading and writing errors.
 
-* Interval endpoints.
-* Mathematical expressions.
-* Integration method.
-* Undefined functions.
-* Division by zero.
-* Invalid user input.
+---
 
-### Classwork 09 - Spanish Verb Conjugator
+### Classwork 12 - The Mandelbrot Set Visualization
 
-This program conjugates regular Spanish verbs ending in **-ar**, **-er**, and **-ir**.
+This program creates an image of the Mandelbrot Set using the CSV file generated in Classwork 11.
 
-The program validates:
+Main features:
 
-* Empty input.
-* Invalid endings.
-* Uppercase input.
-* Numbers or symbols.
-* Invalid verbs.
+* Reads configuration values.
+* Loads Mandelbrot iteration data.
+* Creates an HSV image.
+* Converts the image to RGB.
+* Saves the generated image.
+* Validates configuration values.
+* Detects missing files.
+* Handles image generation errors.
+
+---
 
 ## Repository Files
 
 | File | Description |
 |------|-------------|
-| `verifier_digit.py` | Classwork 07 solution |
-| `numerical_integration.py` | Classwork 08 solution |
-| `spanish_verb_conjugator.py` | Classwork 09 solution |
+| `school_management_system.py` | Classwork 10 solution with exception handling |
+| `mandelbrot_set_math.py` | Classwork 11 solution with exception handling |
+| `mandelbrot_set_image.py` | Classwork 12 solution with exception handling |
+
+---
 
 ## Error Handling
 
-All programs were updated to include exception handling using Python.
+All programs were updated to include Python exception handling.
 
 The repository demonstrates the use of:
 
@@ -73,14 +83,19 @@ The repository demonstrates the use of:
 * `else`
 * `raise`
 
-These structures prevent program crashes and provide clear error messages for invalid user input.
+These structures validate user input, detect invalid data, prevent unexpected program termination, and provide meaningful error messages.
+
+---
 
 ## Environment & Tools
 
 * Language: Python 3.x
+* External Library: Pillow (PIL)
 * Standard Library: math
 * Version Control: Git
 * Hosting Platform: GitHub
+
+---
 
 ## How to Run
 
@@ -90,31 +105,29 @@ These structures prevent program crashes and provide clear error messages for in
 git clone https://github.com/Farah-on/UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026.git
 ```
 
-2. Open the Classwork-13-Error-Handling folder.
+2. Open the **Classwork-14-Error-Handling** folder.
 
 ```bash
-cd Classwork-13-Error-Handling
+cd Classwork-14-Error-Handling
 ```
 
 3. Run any of the available programs.
 
-Example:
+Examples:
 
 ```bash
-python verifier_digit.py
+python school_management_system.py
 ```
-
-or
 
 ```bash
-python numerical_integration.py
+python mandelbrot_set_math.py
 ```
-
-or
 
 ```bash
-python spanish_verb_conjugator.py
+python mandelbrot_set_image.py
 ```
+
+---
 
 ## Learning Objectives
 
@@ -123,9 +136,12 @@ This assignment demonstrates:
 * Exception handling in Python.
 * Input validation.
 * Defensive programming.
+* File handling.
 * User-friendly error messages.
 * Program reliability.
 
+---
+
 ## AI Use Declaration
 
-Claude (Anthropic) was used as a learning and support tool to understand Python exception handling, input validation, defensive programming techniques, improve the previous assignments with `try`, `except`, `else`, and `raise`, and assist in organizing the repository documentation. All code was reviewed, tested, and submitted by the student.
+Claude (Anthropic) was used as a learning and support tool to understand Python exception handling, improve previous assignments using `try`, `except`, `else`, and `raise`, implement defensive programming techniques, validate user input, handle file-related exceptions, and assist in organizing the repository documentation. All code was reviewed, tested, and submitted by the student.
