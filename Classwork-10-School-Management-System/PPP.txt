@@ -7,7 +7,7 @@ Create users dictionary with:
 - name
 
 Create subjects list:
-subjects ← [Matemáticas, Programación, Inglés]
+subjects ← [Matemáticas Discretas, Programación, Inglés II, Cálculo Diferencial, Probabilidad y Estadística, Arquitectura de Computadoras y Servidores, Habilidades Socioemocionales y Manejo de Conflictos]
 
 Create grades dictionary with the grades of each student
 
@@ -151,17 +151,22 @@ ELSE IF role = "coordinador" THEN
 
     DISPLAY "------------------------------------------------"
 
-    DISPLAY
-    "Alumno | Matemáticas | Programación | Inglés"
+    DISPLAY "Alumno"
+    FOR EACH subject IN subjects DO
+        DISPLAY subject
+    ENDFOR
 
     DISPLAY "------------------------------------------------"
 
     FOR EACH student IN grades DO
 
         DISPLAY users[student]["nombre"]
-        DISPLAY grades[student]["Matemáticas"]
-        DISPLAY grades[student]["Programación"]
-        DISPLAY grades[student]["Inglés"]
+
+        FOR EACH subject IN subjects DO
+
+            DISPLAY grades[student][subject]
+
+        ENDFOR
 
         DISPLAY "------------------------------------------------"
 
