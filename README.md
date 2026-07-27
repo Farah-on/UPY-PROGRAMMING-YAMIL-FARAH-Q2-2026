@@ -1,10 +1,10 @@
 # UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026
 
-## Classwork 15 - Sorting Algorithms Repository
+## Classwork 16 - Recursive Functions Repository
 
-This repository contains the solutions developed for Classwork 15 of the Programming course (Q2-2026). The purpose of this assignment is to implement and visualize three classic sorting algorithms — Bubble Sort, Insertion Sort, and Selection Sort — including a step-by-step animated visualization of each algorithm using StdDraw.
+This repository contains the solutions developed for Classwork 16 of the Programming course (Q2-2026). The purpose of this assignment is to implement a set of classic recursive functions in Python — covering numeric recursion, mathematical recursion, and recursion over data structures — while making sure every function handles invalid input gracefully instead of crashing.
 
-The repository includes a working Python program with all required sorting functions, their animated versions, the pseudocode (PPP) written before coding, and the corresponding flowcharts.
+The repository includes a working Python program with all required recursive functions, the pseudocode (PPP) written before coding, and the corresponding flowcharts.
 
 ---
 
@@ -12,18 +12,22 @@ The repository includes a working Python program with all required sorting funct
 
 The program implements the following:
 
-### Sorting Algorithms
+### Recursive Functions
 
-* **Bubble Sort** — repeatedly compares adjacent elements and swaps them if they are in the wrong order.
-* **Insertion Sort** — builds the sorted list one element at a time, inserting each element into its correct position.
-* **Selection Sort** — repeatedly selects the minimum element from the unsorted portion and places it in its correct position.
+* **recursiva** — counts down from `n` to `0`, printing each step, and returns a final message.
+* **fibonacci** — computes the n-th Fibonacci number using pure recursion.
+* **factorial** — computes the factorial of `n` using pure recursion.
+* **multiplicacion_recursiva** — computes `n * m` by repeated recursive addition.
+* **division_entera_recursiva** — computes integer division of `dividendo / divisor` by repeated recursive subtraction.
+* **potencia_recursiva** — computes `base ^ exponente` using pure recursion.
+* **serie_collatz** — prints the Collatz sequence starting from `n` until it reaches `1`.
+* **aplanar_json** — flattens a nested dictionary (JSON-like structure) into a single-level dictionary using dotted keys.
 
-### Visualization
+### Error Handling
 
-* `draw_bars` — draws the current state of the list as bars on a canvas, highlighting selected indices.
-* `bubble_sort_animated` — animated version of Bubble Sort showing each comparison and swap.
-* `insertion_sort_animated` — animated version of Insertion Sort showing each comparison and swap.
-* `selection_sort_animated` — animated version of Selection Sort showing the search for the minimum and the swap.
+* Every function validates its input before recursing (e.g. negative numbers that would never reach the base case) and returns a clear error message instead of crashing.
+* `TypeError` is caught where invalid types (e.g. strings instead of numbers) could otherwise break the recursion.
+* `aplanar_json` catches `AttributeError` for inputs that are not dictionaries (e.g. a list).
 
 ---
 
@@ -31,17 +35,15 @@ The program implements the following:
 
 | File | Description |
 |------|-------------|
-| `sorting_algorithms.py` | Working Python program implementing all sorting algorithms and their step-by-step visualization |
-| `sorting_algorithms_ppp.txt` | Pseudocode (PPP) for all sorting algorithms, written before coding them |
-| `sorting_algorithms_flowchart.png` | Flowchart(s) matching the logic described in the PPP |
+| `recursive_functions.py` | Working Python program implementing all recursive functions with error handling |
+| `recursive_functions_ppp.txt` | Pseudocode (PPP) for all recursive functions, written before coding them |
+| `recursive_functions_flowchart.png` | Flowchart(s) matching the logic described in the PPP |
 
 ---
 
 ## Environment & Tools
 
 * Language: Python 3.x
-* External Library: StdDraw
-* Standard Library: random
 * Version Control: Git
 * Hosting Platform: GitHub
 
@@ -55,16 +57,16 @@ The program implements the following:
 git clone https://github.com/Farah-on/UPY-PROGRAMMING-YAMIL-FARAH-Q2-2026.git
 ```
 
-2. Open the **Classwork-15-Sorting-Algorithms** folder.
+2. Open the **Classwork-16-Recursive-Functions** folder.
 
 ```bash
-cd Classwork-15-Sorting-Algorithms
+cd Classwork-16-Recursive-Functions
 ```
 
 3. Run the program.
 
 ```bash
-python sorting_algorithms.py
+python recursive_functions.py
 ```
 
 ---
@@ -73,14 +75,14 @@ python sorting_algorithms.py
 
 This assignment demonstrates:
 
-* Implementation of classic sorting algorithms.
-* Algorithm visualization and animation.
+* Implementation of classic recursive functions (numeric, mathematical, and structural recursion).
+* Identifying base cases and recursive cases for different types of problems.
 * Pseudocode planning before implementation (PPP).
 * Flowchart design matching algorithmic logic.
-* Program reliability and code organization.
+* Defensive programming: handling invalid input without crashing the program.
 
 ---
 
 ## AI Use Declaration
 
-Claude (Anthropic) was used as a learning and support tool to understand and implement Bubble Sort, Insertion Sort, and Selection Sort, structure their animated visualizations using StdDraw, write the pseudocode (PPP) before coding, generate the flowcharts matching that logic, and assist in organizing the repository documentation. All code was reviewed, tested, and submitted by the student.
+Claude (Anthropic) was used as a learning and support tool to understand and implement the recursive functions, add error handling for invalid inputs, write the pseudocode (PPP) before coding, generate the flowcharts matching that logic, and assist in organizing the repository documentation. All code was reviewed, tested, and submitted by the student.
