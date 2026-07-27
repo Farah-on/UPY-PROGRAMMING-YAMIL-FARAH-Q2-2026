@@ -1,0 +1,212 @@
+#FUNCTION recursiva(n)
+
+#PROCESS
+
+IF n < 0 THEN
+
+    RETURN "Error: n no puede ser negativo"
+
+ENDIF
+
+IF n = 0 THEN
+
+    RETURN "Done!"
+
+ELSE
+
+    DISPLAY n
+
+    RETURN recursiva(n - 1)
+
+ENDIF
+
+#ENDFUNCTION
+
+
+#FUNCTION fibonacci(n)
+
+#PROCESS
+
+IF n < 0 THEN
+
+    RETURN "Error: n no puede ser negativo"
+
+ENDIF
+
+IF n = 0 OR n = 1 THEN
+
+    RETURN n
+
+ELSE
+
+    RETURN fibonacci(n - 1) + fibonacci(n - 2)
+
+ENDIF
+
+#ENDFUNCTION
+
+
+#FUNCTION factorial(n)
+
+#PROCESS
+
+IF n < 0 THEN
+
+    RETURN "Error: n no puede ser negativo"
+
+ENDIF
+
+IF n = 0 OR n = 1 THEN
+
+    RETURN 1
+
+ELSE
+
+    RETURN factorial(n - 1) * n
+
+ENDIF
+
+#ENDFUNCTION
+
+
+#FUNCTION multiplicacion_recursiva(n, m)
+
+#PROCESS
+
+IF m < 0 THEN
+
+    RETURN "Error: m no puede ser negativo"
+
+ENDIF
+
+IF m = 0 THEN
+
+    RETURN 0
+
+ELSE
+
+    RETURN multiplicacion_recursiva(n, m - 1) + n
+
+ENDIF
+
+#ENDFUNCTION
+
+
+#FUNCTION division_entera_recursiva(dividendo, divisor)
+
+#PROCESS
+
+IF divisor = 0 THEN
+
+    RETURN "Error: no se puede dividir entre 0"
+
+ENDIF
+
+IF (dividendo - divisor) < 0 THEN
+
+    RETURN 0
+
+ELSE
+
+    RETURN division_entera_recursiva(dividendo - divisor, divisor) + 1
+
+ENDIF
+
+#ENDFUNCTION
+
+
+#FUNCTION potencia_recursiva(base, exponente)
+
+#PROCESS
+
+IF exponente < 0 THEN
+
+    RETURN "Error: exponente no puede ser negativo"
+
+ENDIF
+
+IF exponente = 0 THEN
+
+    RETURN 1
+
+ELSE
+
+    RETURN potencia_recursiva(base, exponente - 1) * base
+
+ENDIF
+
+#ENDFUNCTION
+
+
+#FUNCTION serie_collatz(n)
+
+#PROCESS
+
+IF n <= 0 THEN
+
+    RETURN "Error: n debe ser un entero positivo"
+
+ENDIF
+
+IF n = 1 THEN
+
+    DISPLAY "END!"
+
+    RETURN 0
+
+ELSE
+
+    IF n MOD 2 = 0 THEN
+
+        DISPLAY n / 2
+
+        RETURN serie_collatz(n / 2)
+
+    ELSE
+
+        DISPLAY 3 * n + 1
+
+        RETURN serie_collatz(3 * n + 1)
+
+    ENDIF
+
+ENDIF
+
+#ENDFUNCTION
+
+
+#FUNCTION aplanar_json(diccionario, clave_padre, separador)
+
+#INPUT
+
+Create elementos as an empty list
+
+#PROCESS
+
+FOR EACH key, value IN diccionario DO
+
+    IF clave_padre is not empty THEN
+
+        nueva_llave ← clave_padre + separador + key
+
+    ELSE
+
+        nueva_llave ← key
+
+    ENDIF
+
+    IF value is a dictionary THEN
+
+        ADD aplanar_json(value, nueva_llave, separador) TO elementos
+
+    ELSE
+
+        ADD (nueva_llave, value) TO elementos
+
+    ENDIF
+
+ENDFOR
+
+RETURN elementos as a dictionary
+
+#ENDFUNCTION
